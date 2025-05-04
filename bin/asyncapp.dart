@@ -1,5 +1,13 @@
-import 'package:asyncapp/asyncapp.dart' as asyncapp;
+Future<String> fetchData() async {
+  return await Future.delayed(
+    Duration(seconds: 2),
+    () => "Données reçues"
+  );
+}
 
-void main(List<String> arguments) {
-  print('Hello world: ${asyncapp.calculate()}!');
+
+void main() async {
+  print("loading data...");
+  final data = await fetchData();
+  print(data); 
 }
